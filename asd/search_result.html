@@ -1,0 +1,46 @@
+{% extends 'home/home_page.html' %}
+
+
+{% block title %}Search {{ search_query|default_if_none:'result' }} - 褐色城市{% endblock %}
+
+{% block search_message %}
+        {% if blogs %}
+            {% if tag %}
+                <header class="page-header">
+				<h1 class="page-title">TAG &nbsp;LIST&nbsp;: &nbsp;&nbsp;<span>{{ tag }}</span></h1>
+			    </header>
+            {% endif %}
+            {% if category %}
+                <header class="page-header">
+				<h1 class="page-title">CATEGORY &nbsp;LIST&nbsp;: &nbsp;&nbsp;<span>{{ category }}</span></h1>
+			    </header>
+            {% endif %}
+            {% if search_query %}
+                <header class="page-header">
+				<h1 class="page-title">Search Results for <span style="color: #0a6ebd">"{{ search_query }}"</span> with {{ blogs|length }} article{% if blogs|length > 1 %}s{% endif %} found.</h1>
+			    </header>
+            {% endif %}
+
+            {% else %}
+            <section class="no-results not-found">
+	        <header class="page-header">
+		    <h1 class="page-title">Nothing Found</h1>
+	        </header><!-- .page-header -->
+
+	<div class="page-content">
+
+			<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+
+<form role="search" method="get" class="search-form" action="{% url 'search' %}#page_anchor">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search …" {% if search_query %}value="{{ search_query }}"{% endif %} name="query">
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+
+			</div><!-- .page-content -->
+</section>
+        {% endif %}
+
+{% endblock %}

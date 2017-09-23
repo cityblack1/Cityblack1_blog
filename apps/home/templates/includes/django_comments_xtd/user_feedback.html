@@ -1,0 +1,9 @@
+{% load staticfiles %}
+{% if allow_feedback %}
+<span class="small">
+  {% if show_feedback and item.likedit_users %}
+  <a data-toggle="tooltip" title="{{ item.likedit_users|join:'<br/>' }}"><span class="small">{{ item.likedit_users|length }}</span></a>
+  {% endif %}
+
+  <a href="{% url 'comments-xtd-like' item.comment.pk %}" class="{% if not item.likedit %}mutedlink{% endif %}"><span id="praise"><img src="{% static 'zan.png' %}" id="praise-img">&nbsp;{{ item.likedit_users|length }}</span></a></span>
+{% endif %}

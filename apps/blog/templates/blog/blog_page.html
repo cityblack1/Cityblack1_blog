@@ -1,0 +1,100 @@
+{% extends 'home/base.html' %}
+{% load comments %}
+{% load comments_xtd %}
+{% load wagtailcore_tags %}
+{% load i18n %}
+{% load staticfiles %}
+{% load custom_tags %}
+
+
+
+{% block content %}
+    <script>
+    $(document).ready(function(){
+        port_url = '{{ page.get_port_url }}';
+
+  $(".comment-reply-link").bind("click",function(){
+      if($(this).hasClass('completed')){
+          $(this).removeClass('completed');
+          $(this).parent().next().remove();
+          $(this).parent().next().remove();
+      }else {
+          var id = $(this).parent().attr('id').split('-')[1];
+          $(this).addClass('completed');
+          $(this).parent().parent().append('<br><iframe'+ ' src="' + port_url + '/comments/reply/' + id + '/" style="width:100%; height: {% if not request.user.is_authenticated %}280px{% else %}100%{% endif %}; border:0;margin: 0;" name="jetpack_remote_comment" class="iFrame" id="iFrame">'+'</iframe>')
+      }
+
+  });
+});
+
+    </script>
+                                        {% breadcrumbs %}
+
+    <article class="page type-page status-publish hentry" style="margin-bottom: 1em;">
+
+	<header class="entry-header">
+		<h1 class="entry-title">{{ page.title }}</h1>
+    </header><!-- .entry-header -->
+
+	<div class="entry-content">
+        {% if page.body.raw_text %}
+        {{ page.body.raw_text|safe }}
+        {% else %}
+        {% include "blog/includes/streamfield.html" with content=page.body %}
+            </div>
+        {% endif %}
+
+
+
+
+
+    {% with page as object %}
+  {% get_comment_count for object as comment_count %}
+
+    </article><!-- #post-## -->
+        {% with next=page.get_next_sibling prev=page.get_prev_sibling %}
+        {% if next or prev %}
+        <hr style="margin:3em 0 2em">
+
+        <div style="line-height:2; margin-bottom: 2em">
+        {% if next %}<h3>next : <a href="{% pageurl next %}">{{ next.title }}</a></h3>{% endif %}
+        {% if prev %}<h3>previous: <a href="{% pageurl prev %}">{{ prev.title }}</a></h3>{% endif %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			{{ comment_count }} thought{{ comment_count|pluralize }} on “{{ page.title }}”
+            </h2>
+
+      {% render_comment_form for object %}
+
+        {% render_xtdcomment_tree  for object allow_flagging allow_feedback %}
+	<nav class="navigation comment-navigation" role="navigation">
+		<h2 class="screen-reader-text">Comments navigation</h2>
+		<div class="nav-links">
+                    {% breadcrumbs %}
+	</nav>
+
+
+</div><!-- .comments-area -->
+        {% endwith %}
+
+{% endblock %}
+
+{% block similar %}
+<section id="blog_subscription-3" class="widget jetpack_subscription_widget">
+    <h2 class="widget-title">SIMILAR ARTICLE{{ similar_blog|pluralize }}</h2>
+            <div class="menu-sections-container">
+                <ul id="menu-sections-1" class="menu">
+                    {% for blog in similar_blog %}
+                    <li class="menu-item ">
+                        <a href="{% pageurl blog %}">{{ blog.title }}</a></li>
+                    {% endfor %}
+                </ul></div>
+
+
+</section>
+{% endblock %}

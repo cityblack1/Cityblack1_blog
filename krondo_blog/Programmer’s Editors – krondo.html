@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://krondo.com/programmers-editors/ -->
+<html lang="en-US" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="http://graph.facebook.com/?callback=WPCOMSharing.update_facebook_count&amp;ids=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F&amp;_=1504619675650"></script><script async="" src="http://api.pinterest.com/v1/urls/count.json?callback=WPCOMSharing.update_pinterest_count&amp;url=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F&amp;_=1504619675649"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://krondo.com/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Programmer’s Editors – krondo</title>
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s.gravatar.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="krondo » Feed" href="http://krondo.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="krondo » Comments Feed" href="http://krondo.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="krondo » Programmer’s Editors Comments Feed" href="http://krondo.com/programmers-editors/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/krondo.com\/wp-includes\/js\/wp-emoji.js?ver=4.8.1","twemoji":"http:\/\/krondo.com\/wp-includes\/js\/twemoji.js?ver=4.8.1"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji4" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var stringFromCharCode = String.fromCharCode,
+			flag, flag2, emoji41, emoji42;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56826, 55356, 56819 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				// Add a zero width space between the characters, to force rendering as characters.
+				context.fillText( stringFromCharCode( 55356, 56826, 8203, 55356, 56819 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				if ( flag !== flag2 ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				// Cleanup from previous test.
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				return flag !== flag2;
+			case 'emoji4':
+				/*
+				 * Emoji 5 has faries of all genders.
+				 *
+				 * To test for support, try to render a new emoji (fairy, male), then compares
+				 * it to how it would look if the browser doesn't render it correctly
+				 * (fairy + male sign).
+				 */
+				context.fillText( stringFromCharCode( 55358, 56794, 8205, 9794, 65039 ), 0, 0 );
+				emoji41 = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55358, 56794, 8203, 9794, 65039 ), 0, 0 );
+				emoji42 = canvas.toDataURL();
+
+				return emoji41 !== emoji42;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji4' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script><script src="./Programmer’s Editors – krondo_files/twemoji.js.下载" type="text/javascript" defer=""></script><script src="./Programmer’s Editors – krondo_files/wp-emoji.js.下载" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="twentysixteen-jetpack-css" href="./Programmer’s Editors – krondo_files/twentysixteen.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_likes-css" href="./Programmer’s Editors – krondo_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentysixteen-fonts-css" href="./Programmer’s Editors – krondo_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./Programmer’s Editors – krondo_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentysixteen-style-css" href="./Programmer’s Editors – krondo_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://krondo.com/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://krondo.com/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://krondo.com/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="jetpack-top-posts-widget-css" href="./Programmer’s Editors – krondo_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack-subscriptions-css" href="./Programmer’s Editors – krondo_files/subscriptions.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./Programmer’s Editors – krondo_files/sharing.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./Programmer’s Editors – krondo_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="goodreads-widget-css" href="./Programmer’s Editors – krondo_files/goodreads.css" type="text/css" media="all">
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/jquery.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/jquery-migrate.js.下载"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://krondo.com/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="http://krondo.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://krondo.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://krondo.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.8.1">
+<link rel="canonical" href="http://krondo.com/programmers-editors/">
+<link rel="shortlink" href="http://wp.me/P1qgjk-Ev">
+<link rel="alternate" type="application/json+oembed" href="http://krondo.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://krondo.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F&amp;format=xml">
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/kindle-this.js.下载"></script>
+
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://s1.wp.com/">
+<link rel="dns-prefetch" href="http://s2.wp.com/">
+<link rel="dns-prefetch" href="http://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="http://0.gravatar.com/">
+<link rel="dns-prefetch" href="http://1.gravatar.com/">
+<link rel="dns-prefetch" href="http://2.gravatar.com/">
+<link rel="dns-prefetch" href="http://widgets.wp.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Programmer’s Editors">
+<meta property="og:url" content="http://krondo.com/programmers-editors/">
+<meta property="og:description" content="This page contains links to various text editors for programmers. The emphasis is on freely available editors for UNIX-like systems such as Linux, FreeBSD, etc. However, some of the editors listed …">
+<meta property="article:published_time" content="2010-08-09T03:57:08+00:00">
+<meta property="article:modified_time" content="2014-07-09T22:14:40+00:00">
+<meta property="og:site_name" content="krondo">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Programmer’s Editors – krondo_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Programmer’s Editors – krondo_files/services.css"></head>
+
+<body class="page-template-default page page-id-2511">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="http://krondo.com/programmers-editors/#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://krondo.com/" rel="home">krondo</a></p>
+											<p class="site-description">The website of Dave Peticolas</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">Menu</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
+								<div class="menu-sections-container"><ul id="menu-sections" class="primary-menu"><li id="menu-item-3829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="http://krondo.com/about-me/">About me</a></li>
+<li id="menu-item-3713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3713"><a href="http://krondo.com/an-introduction-to-asynchronous-programming-and-twisted/">Twisted Introduction</a></li>
+<li id="menu-item-3711" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2511 current_page_item menu-item-3711"><a href="http://krondo.com/programmers-editors/">Programmer’s Editors</a></li>
+<li id="menu-item-3712" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3712"><a href="http://krondo.com/software/">Software</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+											<div class="header-image">
+					<a href="http://krondo.com/" rel="home">
+						<img src="./Programmer’s Editors – krondo_files/header.png" srcset="https://i0.wp.com/krondo.com/wp-content/uploads/2016/01/header.png?w=1200 1200w, https://i0.wp.com/krondo.com/wp-content/uploads/2016/01/header.png?resize=300%2C70 300w, https://i0.wp.com/krondo.com/wp-content/uploads/2016/01/header.png?resize=768%2C179 768w, https://i0.wp.com/krondo.com/wp-content/uploads/2016/01/header.png?resize=1024%2C239 1024w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px" width="1200" height="280" alt="krondo">
+					</a>
+				</div><!-- .header-image -->
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-2511" class="post-2511 page type-page status-publish hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">Programmer’s Editors</h1>	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		<p>This page contains links to various text editors for programmers. The emphasis is on freely available editors for UNIX-like systems such as <a href="http://www.linux.org/">Linux</a>, <a href="http://www.freebsd.org/">FreeBSD</a>, etc. However, some of the editors listed may also be available for other operating systems such as <a href="http://www.microsoft.com/">Windows</a> or the <a href="http://www.apple.com/">Mac OS</a>. Although these days the Mac OS is just another flavor of UNIX.</p>
+<p>The editors are described only briefly, but links to editor homepages and other useful sites are provided. Click on the heading for a particular editor to jump to that editor’s homepage.</p>
+<p>All of the editors below are, as far as I know, available under some form of free license, such as the <a href="http://www.gnu.org/">GNU</a> <a href="http://www.gnu.org/copyleft/gpl.html">General Public License</a>.  Consult the documentation of individual editors for details on their licensing.</p>
+<p>Some of the programs below are more than just editors and are in fact full-fledged Integrated Development Environments with support for project management, building, debugging, class browsing, etc. In some cases I have indicated this, but in others I haven’t. Go figure!</p>
+<p>Writing your own programmer’s editor seems to be a pretty common activity. While writing a new editor may seem to be an unnecessary duplication of effort, you really must program in order to become a good programmer. And since the editor is near and dear to any programmer’s heart, why not write your own? I must confess, though, I’ve never written one myself.</p>
+<h4><a href="http://caerwyn.com/acme/">Acme-SAC</a></h4>
+<p>A version of the Acme editor that was originally written for the Inferno OS. The SAC stands for Stand Alone Complex, obviously.</p>
+<h4><a href="http://www.fox-toolkit.org/adie.html">Adie</a></h4>
+<p>Adie, or ADvanced Interactive Editor, is written using the <a href="http://www.fox-toolkit.org/">FOX</a> portable GUI toolkit. The authors stress that Adie is fast.</p>
+<h4><a href="http://mahon.cwx.net/">aee and ee</a></h4>
+<p>These are two tiny little editors. Awww, so cute!</p>
+<h4><a href="http://anjuta.sourceforge.net/">Anjuta</a></h4>
+<p>Anjuta is a C/C++ development environment with a focus on the Gtk+/Gnome platform. It seems very featureful, and, at least according to the author, “above all, she is beautiful.” Indeed. The Anjuta motto is “The best is in you.” Thanks!</p>
+<h4><a href="http://www.nongnu.org/beaver/">Beaver</a></h4>
+<p>Finally, finally there is a programmer’s editor called Beaver! You’ve probably already guessed that Beaver stands for an Early AdVanced EditoR.</p>
+<h4><a href="http://bluefish.openoffice.nl/index.html">Bluefish</a></h4>
+<p>Gnome editor.</p>
+<h4><a href="http://cce.sourceforge.net/">CCE</a></h4>
+<p>This is the Cervantes Code Editor. Or it would have been, if it had ever gone beyond the “planning stages”. Now we’ll never know what might have been.</p>
+<h4><a href="http://jolomo.net/ce">CE</a></h4>
+<p>Another tiny little editor.</p>
+<h4><a href="http://www.thecnik.com/cnikJEditor/cnikJE.html">cnikJEditor</a></h4>
+<p>An easy-to-pronounce Java-based editor.</p>
+<h4><a href="ftp://ftp.ibiblio.org/pub/Linux/apps/editors/X/cooledit/!INDEX.html">CoolEdit</a></h4>
+<p>CoolEdit is a text editor for the X Window System. It provides syntax coloring, key redefinition, macros, and other features. CoolEdit can be extended via the <a href="http://www.python.org/">Python</a> scripting language.</p>
+<p>CoolEdit does not require any additional libraries other than the standard Xlib.</p>
+<h4><a href="http://cream.sourceforge.net/">Cream</a></h4>
+<p>A Vi-based editor.</p>
+<h4><a href="http://cssed.sourceforge.net/">CSSED</a></h4>
+<p>A focus on CSS editing, but includes programming language support.</p>
+<h4><a href="http://developer.berlios.de/projects/culebra/">Culebra</a></h4>
+<p>A Python IDE.</p>
+<h4><a href="http://cute.sourceforge.net/">CUTE</a></h4>
+<p>The CUTE User-friendly Text Editor.</p>
+<h4><a href="http://dav-text.sourceforge.net/">Dav</a></h4>
+<p>Dav is a text-mode editor. Dav stands for Dav Ain’t Vi.</p>
+<h4><a href="http://mitglied.lycos.de/albkleine/">e3</a></h4>
+<p>I believe this is a text-mode editor.</p>
+<h4><a href="http://www.e93.org/">e93</a></h4>
+<p>e93 is an editor that can be extended with Tcl scripts. Apparently it was influenced by editors on the Macintosh and the NeXT systems.</p>
+<h4><a href="http://www.eclipse.org/">Eclipse</a></h4>
+<p>The 800-pound gorilla of IDEs.</p>
+<h4><a href="http://eddi.sourceforge.net/">eddi</a></h4>
+<p>Eddi is a X-Windows editor written in Tcl and <a href="http://tix.sourceforge.net/">tix</a>.</p>
+<h4><a href="http://edgar.sourceforge.net/">Edgar</a></h4>
+<p>An editor project that never really got off the ground. Maybe this is the reason:</p>
+<blockquote><p>This should be implemented using as much XML as possible…</p></blockquote>
+<p>No-so-famous last words!</p>
+<h4><a href="http://puma.dkrz.de/puma/download/edi">EDI</a></h4>
+<p>EDI is a text-mode editor for C and Fortran.</p>
+<h4><a href="http://www.editra.org/">Editra</a></h4>
+<p>I wish there were more text editors.</p>
+<h4><a href="http://www.gnu.org/software/mit-scheme/documentation/mit-scheme-user/Edwin.html">Edwin</a></h4>
+<p>Emacs but with MIT/GNU Scheme.</p>
+<h4><a href="ftp://cs.pdx.edu/pub/elvis/README.html">elvis</a></h4>
+<p>Yet another vi clone.</p>
+<h4><a href="http://www.gnu.org/software/emacs/emacs.html">Emacs</a></h4>
+<p><a href="http://www.gnu.org/software/emacs/emacs.html">Emacs</a> is a text editor with a <a href="http://en.wikipedia.org/wiki/Emacs#History">storied history</a>. It can be extended using the Lisp language.</p>
+<h4><a href="http://www.emeraldeditor.com/">Emerald Editor</a></h4>
+<p>Inspired by the Crimson Editor, evidently</p>
+<h4><a href="http://eric-ide.python-projects.org/index.html">Eric</a></h4>
+<p>A Python and Ruby IDE.</p>
+<h4><a href="http://hunter.apana.org.au/~cjb/Code/index.html">Ersatz Emacs</a></h4>
+<p>A minimal Emacs replacement? Could there be such a thing?</p>
+<h4><a href="http://freddy.sourceforge.net/">Freddy</a></h4>
+<p>A programmer’s editor written using <a href="http://www.trolltech.com/">Qt</a>.</p>
+<h4><a href="http://fte.sourceforge.net/">FTE</a></h4>
+<p>This editor seems to have been ported to lots of operating systems.</p>
+<h4><a href="http://www.geany.org/">geany</a></h4>
+<p>I think it’s pronounced like ‘genie’.</p>
+<h4><a href="http://gedit.sourceforge.net/">gedit</a></h4>
+<p>The standard <a href="http://www.gnome.org/">Gnome</a> text editor.</p>
+<h4><a href="http://glimmer.sourceforge.net/index.php3">Glimmer</a></h4>
+<p>Glimmer claims to be the most advanced text/code editor for GNOME. While I can’t confirm or deny that, it does seem to have support for quite a large number of different languages.</p>
+<h4><a href="http://gobby.0x539.de/trac">Gobby</a></h4>
+<p>A collaborative text editor</p>
+<h4><a href="http://www.eng.auburn.edu/department/cse/research/grasp">GRASP</a></h4>
+<p>Grasp is a programmer’s editor that includes support for Control Structure Diagrams, or CSDs. These are claimed to improve the “comprehension efficiency” of software programs.</p>
+<h4><a href="http://armedbear.org/">J</a></h4>
+<p>J is yet another programmer’s editor written in Java. The natural progression of the naming scheme for Java editors seems to have reached its ultimate conclusion, excepting the as-yet-undeveloped editor named “”. If you’re looking to write a Java-based programmer’s editor (and who isn’t, really?), you’d better reserve the name quickly!</p>
+<h4><a href="http://www.ibiblio.org/pub/Linux/apps/editors/X/jade-3.2.tar.gz">Jade</a></h4>
+<p>Since it starts with J, you might think this is a Java-based editor. Nope, it’s an Emacs-like editor for X11.</p>
+<h4><a href="http://mathsrv.ku-eichstaett.de/MGF/homes/grothmann/je/index.html">JE</a></h4>
+<p>Another Java editor, but this time its name starts with J.</p>
+<h4><a href="http://www.jedsoft.org/jed/">JED</a></h4>
+<p>The JED editor is a command-line and X-windows editor with an extensible macro language based on the <a href="http://www.s-lang.org/">S-Lang</a> library.</p>
+<h4><a href="http://www.jedit.org/">jEdit</a></h4>
+<p>jEdit is a text editor written in <a href="http://java.sun.com/">Java</a> with several programming features such as syntax coloring, automatic indentation, and abbreviations. To run jEdit you will need some form of Java Virtual Machine such as the one available in the Java Development Kit (JDK). You can obtain the JDK for Linux from the <a href="http://www.blackdown.org/">Java-Linux</a> page.</p>
+<h4><a href="http://jehep.sourceforge.net/">jeHEP</a></h4>
+<p>A java editor with on-the-fly spell checking.</p>
+<h4><a href="http://www.librelogiciel.com/software/jered/action_Presentation">jered</a></h4>
+<p>A C/C++ editor.</p>
+<h4><a href="http://www.jext.org/">Jext</a></h4>
+<p>Jext (as in rhymes-with-text?) is another programmer’s editor written in Java.</p>
+<h4><a href="http://sourceforge.net/projects/joe-editor">joe</a></h4>
+<p>A little editor with the friendly name of joe.</p>
+<h4><a href="ftp://ftp.cs.toronto.edu/cs/ftp/pub/hugh/jove-dev">jove</a></h4>
+<p>Another Emacs-like editor.</p>
+<h4><a href="http://kate.kde.org/">Kate</a></h4>
+<p>The KDE Advanced Text Editor.</p>
+<h4><a href="http://www.arabeyes.org/project.php?proj=katoob">katoob</a></h4>
+<p>Katoob. Katoob! Katoob is a Gnome editor with an Arabic interface (in addition to English).</p>
+<h4><a href="http://sourceforge.net/projects/katy/">Katy</a></h4>
+<p>An editor for KDE. Perhaps Kate’s little sister?</p>
+<h4><a href="http://www.kdevelop.org/">KDevelop</a></h4>
+<p>KDevelop is a C/C++ IDE that runs under the <a href="http://www.kde.org/">KDE</a> environment.</p>
+<h4><a href="http://www.kate-editor.org/kwrite">KWrite</a></h4>
+<p>The official KDE editor.</p>
+<h4><a href="http://www.activestate.com/komodo-edit">Komodo Edit</a></h4>
+<p>An editor for dynamic languages from the folks at <a href="http://www.activestate.com/">ActiveState</a>.</p>
+<h4><a href="ftp://ftp.yars.free.net/pub/source/le">le</a></h4>
+<p>A text-mode editor with lots of block operations, apparently.</p>
+<h4><a href="http://led-editor.sourceforge.net/">led</a></h4>
+<p>A fullscreen text-mode editor.</p>
+<h4><a href="http://webpages.charter.net/edreamleo/front.html">Leo</a></h4>
+<p>Literate programming.</p>
+<h4><a href="http://mooedit.sourceforge.net/">medit</a></h4>
+<p>The URL seems to imply a somewhat different name.</p>
+<h4><a href="http://www.aquest.com/emacs.htm">MicroEmacs</a></h4>
+<p>A wee little Emacs?</p>
+<h4><a href="http://towo.net/mined">mined</a></h4>
+<p>Mined is a text editor that runs on both DOS and UNIX.</p>
+<h4><a href="http://countessmod.berlios.de/ml">ML</a></h4>
+<p>An editor for Tcl programs.</p>
+<h4><a href="http://micampe.it/projects/moleskine">Moleskine</a></h4>
+<p>Moleskine is a text editor for Gnome. It is based on the <a href="http://www.scintilla.org/">scintilla</a> source editing component for <a href="http://www.microsoft.com/">Win32</a> and <a href="http://www.gtk.org/">gtk+</a>. Moleskin’s motto seems to be “Enjoy the Freedom of Writing.” I’ve always thought that mottos for software are a marketing tool, but this is the second free text editor with its own motto. I guess there are so many editors out there they have to advertise themselves well.</p>
+<h4><a href="http://konst.org.ua/motor">Motor</a></h4>
+<p>Motor is a text-mode IDE.</p>
+<h4><a href="http://www.triptico.com/software/mp.html">mp</a></h4>
+<p>mp is a portable programmer’s editor that runs under Unix and Windows in both text-mode and GUI modes. mp stands for Minimum Profit. Yes it does.</p>
+<h4><a href="http://www.primenet.com/~jjens/mpTOOLS.html">mpEDIT</a></h4>
+<p>Another editor starting with “mp”. This one is Java-based, though.</p>
+<h4><a href="http://www.nano-editor.org/">nano</a></h4>
+<p>Nano is a free-software replacement for the <a href="http://www.u.arizona.edu/local/pico.html">pico</a> text editor.</p>
+<h4><a href="http://ne.dsi.unimi.it/">ne</a></h4>
+<p>ne is the Nice Editor. It claims to be easy for the beginner and powerful for the wizard.</p>
+<h4><a href="http://www.nedit.org/">NEdit</a></h4>
+<p>NEdit is an X-Windows based editor that has been around a while.</p>
+<h4><a href="http://www.netbeans.org/">NetBeans</a></h4>
+<p>A Java IDE.</p>
+<h4><a href="http://ninja-ide.org/">Ninja-IDE</a></h4>
+<p>Ninjas! In my IDEs! Seems to be Python-centric. Nothing wrong with that.</p>
+<h4><a href="http://peppy.flipturn.org/">Peppy</a></h4>
+<p>Peppy is (ap)Proximated (x)Emacs Powered by Python. In other words, an XEmacs-inspired editor but with Python as the language. Neato.</p>
+<h4><a href="http://pfe.sourceforge.net/">PFE</a></h4>
+<p>The Portable Forth Environment.</p>
+<h4><a href="http://pida.co.uk/">PIDA</a></h4>
+<p>This seems to be a sort of Python meta-IDE which can embed other, third-party tools, including other IDEs.</p>
+<h4><a href="http://www.stud.uni-karlsruhe.de/~unk6/hemlock/">Portable Hemlock</a></h4>
+<p>An Emacs-like editor written in Lisp.</p>
+<h4><a href="http://pype.sourceforge.net/index.shtml">PyPE</a></h4>
+<p>Python Programmer’s editor. Hierarchical browsing and syntax highlighting, among other things.</p>
+<h4><a href="https://code.google.com/p/pyscripter/">Pyscripter</a></h4>
+<p>A Python IDE written in Delphi?</p>
+<h4><a href="http://wiki.wxpython.org/index.cgi/PythonCardEditor">PythonCardEditor</a></h4>
+<p>A wxPython editor.</p>
+<h4><a href="http://quanta.kdewebdev.org/index.php">Quanta Plus</a></h4>
+<p>A KDE IDE.</p>
+<h4><a href="http://rope.sourceforge.net/">rope</a></h4>
+<p>A python refactoring IDE and library.</p>
+<h4><a href="http://swtch.com/plan9port/">Sam</a></h4>
+<p>sam is a text editor written by Rob Pike of <a href="http://www.krondo.net/books/reviews/the_practice_of_programming/bookPage">The Practice of Programming</a> fame.</p>
+<h4><a href="http://www.scintilla.org/SciTE.html">SciTE</a></h4>
+<p>Another editor based on <a href="http://www.scintilla.org/">Scintilla</a>.</p>
+<h4><a href="http://scribes.sourceforge.net/">Scribes</a></h4>
+<p>“Simple, slim and sleek, yet powerful”. At least according to the website!</p>
+<h4><a href="http://setedit.sourceforge.net/">SETEDIT</a></h4>
+<p>SETEDIT is a programmer’s editor with a text-mode interface like the old Wordstar or Borland editors.</p>
+<h4><a href="http://pythonide.blogspot.com/">SPE</a></h4>
+<p>Stani’s Python Editor. Lots of features including, intriguingly, support for <a href="http://www.blender.org/">Blender</a>.</p>
+<h4><a href="http://code.google.com/p/spyderlib/">spyder</a></h4>
+<p>Spyder is QT-based Python IDE. Looks intriguing!</p>
+<h4><a href="http://kvirc.firenze.linux.it/~pragma/ssex">ssex</a></h4>
+<p>A Qt programmer’s editor whose first feature is “Heavy C/C++ syntax highlighting”.</p>
+<h4><a href="http://sourceforge.net/projects/stef/">Stef</a></h4>
+<p>It’s the Structured Text Editor Framework. And I think it’s time software developers gave up on acronym names for their creations.</p>
+<h4><a href="http://sourceforge.net/projects/syn/">Syn</a></h4>
+<p>This isn’t the SynEdit editor, it’s another editor.</p>
+<h4><a href="http://synedit.sourceforge.net/index.php">SynEdit</a></h4>
+<p>An editor for Borland’s Delphi language.</p>
+<h4><a href="http://tea.linux.kiev.ua/">TEA</a></h4>
+<p>A GTK2-based text editor. It seems to have a companion editor named Chai.</p>
+<h4><a href="http://www.textflex.com/texttrix/">Text Trix</a></h4>
+<p>Not so easy to say. Looks like Java editors are having to really reach to come up with new names.</p>
+<h4><a href="http://hessling-editor.sourceforge.net/">THE</a></h4>
+<p>A text editor that uses the REXX macro language.</p>
+<h4><a href="http://www.angelfire.com/linux/tkscribe">TK Scribe</a></h4>
+<p>Another Tcl editor.</p>
+<h4><a href="http://code.google.com/p/ulipad/">UliPad</a></h4>
+<p>These folks are on the way to make “THE programmer editor”.</p>
+<h4><a href="http://www.modest-proposals.com/Twee.htm">uSk and u</a></h4>
+<p>These two editors are twee editors. According to the website:</p>
+<blockquote><p>A ‘twee’ editor is one that is only a few multiples of the minimum size for a functional editor, without compression.</p></blockquote>
+<p>The author seems to have a bit of an obsession about making editors as small as possible. In addition to uSk and u, there are several  other twee editors in a table that includes their size in bytes!</p>
+<h4><a href="http://www.objectcentral.com/">V</a></h4>
+<p>V is an IDE that supports C++ and Java.</p>
+<h4><a href="http://www.vim.org/">Vi</a></h4>
+<p>If you learn only one editor on Unix, you should learn Vi. The other editors listed on this page may or may not be installed on a given Unix system, but Vi will be there. Vi does not require X Windows to run – all you need is a text terminal.</p>
+<p>You can also get online help from Vi. Type <kbd>:help</kbd> while you are in command mode to read Vi’s online manual. If you don’t know whether you’re in command mode or not, press <kbd>ESC</kbd> before typing the help command.</p>
+<p>Vi has <em>many</em> features for programmers including syntax coloring, auto-indentation, shell command invocation, debugging support, and more. If you use Vi for programming, you should definitely take the time to learn some of Vi’s more advanced features.</p>
+<h4><a href="http://invisible-island.net/vile">Vile</a></h4>
+<p>Vile is a vi-like editor.</p>
+<h4><a href="http://www.cse.yorku.ca/~oz/wily/">Wily</a></h4>
+<p>A curious little mouse-oriented editor. It’s a work-alike for the acme editor in the Plan 9 system.</p>
+<h4><a href="http://soft.kaworu.it/wxKonTEXTen.htm">wxKonTEXT</a></h4>
+<p>All the code is in one Python file.</p>
+<h4><a href="http://xcoral.free.fr/">XCoral</a></h4>
+<p>Xcoral is a multi-window mouse-based text editor for Unix and the X Window System. Xcoral provides standard features such as macros, undo, search, regions, multi-buffer, modes, color syntax, etc.</p>
+<p>A built-in browser enables navigation through C functions, C++ and Java classes, methods, files, and attributes. This browser is very fast and self-updates automatically after file modifications. An ANSI C Interpreter (Smac) allows the user to extend the editor’s facilities with user functions, key bindings, modes, etc.</p>
+<p>Xcoral works on the following systems: SunOS 4.1.x, Solaris 2.x, Linux, FreeBSD, NetBSD, HPux, Irix and Digital Unix.</p>
+<h4><a href="http://www.xemacs.org/">XEmacs</a></h4>
+<p>A fork of Emacs.</p>
+<h4><a href="http://sourceforge.net/projects/xrope/">xRope</a></h4>
+<p>xRope is to rope what xEmacs is to Emacs. Yep.</p>
+<h4><a href="http://haskell.org/haskellwiki/Yi">Yi</a></h4>
+<p>The Yi text editor is written in, and extensible with, the <a href="http://haskell.org/">Haskell</a> language.</p>
+<h4><a href="http://zed.c3po.it/">ZED</a></h4>
+<p>Hey, what do you know, another text editor!</p>
+<h4><a href="http://zile.sourceforge.net/">Zile</a></h4>
+<p>Another Emacs clone. This one claims to be small and lightweight.</p>
+<h4><a href="http://zoinks.mikelockwood.com/">Zoinks</a></h4>
+<p>A development environment inspired by some of the popular proprietary IDEs out there.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-2511" class="share-google-plus-1 sd-button share-icon" href="http://krondo.com/programmers-editors/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-2511" class="share-linkedin sd-button share-icon" href="http://krondo.com/programmers-editors/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-2511" class="share-facebook sd-button share-icon" href="http://krondo.com/programmers-editors/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-2511" class="share-twitter sd-button share-icon" href="http://krondo.com/programmers-editors/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li><a href="http://krondo.com/programmers-editors/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="http://krondo.com/programmers-editors/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="http://krondo.com/programmers-editors/?share=tumblr&amp;nb=1" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-end"></li><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-2511" class="share-pinterest sd-button share-icon" href="http://krondo.com/programmers-editors/?share=pinterest&amp;nb=1" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="http://krondo.com/programmers-editors/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li><li class="share-email share-service-visible"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="http://krondo.com/programmers-editors/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" id="like-post-wrapper-21035566-2511-59aeacad6be8e" data-src="https://widgets.wp.com/likes/#blog_id=21035566&amp;post_id=2511&amp;origin=krondo.com&amp;obj_id=21035566-2511-59aeacad6be8e" data-name="like-post-frame-21035566-2511-59aeacad6be8e"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><span class="sd-text-color"></span><a class="sd-link-color"></a></div>	</div><!-- .entry-content -->
+
+	
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			13 thoughts on “Programmer’s Editors”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-7416" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-7416" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/c78456de026131270c94b1ccc727ee94" srcset="http://0.gravatar.com/avatar/c78456de026131270c94b1ccc727ee94?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/c78456de026131270c94b1ccc727ee94?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-c78456de026131270c94b1ccc727ee94-0">						<b class="fn">Paul</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-7416">
+							<time datetime="2012-01-25T00:16:01+00:00">
+								January 25, 2012 at 12:16 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>how could you miss vim ?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=7416#respond" onclick="return addComment.moveForm( &quot;div-comment-7416&quot;, &quot;7416&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to Paul">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-7418" class="comment byuser comment-author-dave bypostauthor odd alt depth-2">
+			<article id="div-comment-7418" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-0">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-7418">
+							<time datetime="2012-01-25T06:47:58+00:00">
+								January 25, 2012 at 6:47 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Well if you click on the ‘Vi’ link it actually goes to vim… <img draggable="false" class="emoji" alt="🙂" src="./Programmer’s Editors – krondo_files/1f642.svg" scale="0"><br>
+These days I guess I just consider vim == vi. Who uses non-vim vi<br>
+anymore?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=7418#respond" onclick="return addComment.moveForm( &quot;div-comment-7418&quot;, &quot;7418&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-7426" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-7426" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/2d2fc489f36611a0a1d33a5708449935" srcset="http://2.gravatar.com/avatar/2d2fc489f36611a0a1d33a5708449935?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://2.gravatar.com/avatar/2d2fc489f36611a0a1d33a5708449935?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-2d2fc489f36611a0a1d33a5708449935-0">						<b class="fn">prezident</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-7426">
+							<time datetime="2012-01-25T22:53:27+00:00">
+								January 25, 2012 at 10:53 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>you missed komodo edit…</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=7426#respond" onclick="return addComment.moveForm( &quot;div-comment-7426&quot;, &quot;7426&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to prezident">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-7429" class="comment byuser comment-author-dave bypostauthor odd alt depth-2">
+			<article id="div-comment-7429" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-1">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-7429">
+							<time datetime="2012-01-26T08:44:40+00:00">
+								January 26, 2012 at 8:44 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Added!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=7429#respond" onclick="return addComment.moveForm( &quot;div-comment-7429&quot;, &quot;7429&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-7430" class="comment byuser comment-author-dave bypostauthor even depth-2">
+			<article id="div-comment-7430" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-2">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-7430">
+							<time datetime="2012-01-26T08:45:23+00:00">
+								January 26, 2012 at 8:45 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>And thanks Mr. President!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=7430#respond" onclick="return addComment.moveForm( &quot;div-comment-7430&quot;, &quot;7430&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-21067" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-21067" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="http://graph.facebook.com/653484238/picture?type=large&amp;_md5=5e346136d17e74652126ab1d9a94511b" srcset="http://0.gravatar.com/avatar/f7daf89168df6365f2d0cec7bd1affb8?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo" height="42" width="42" scale="0">						<b class="fn"><a href="https://www.facebook.com/swdev" rel="external nofollow" class="url">Eko Suprapto Wibowo</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21067">
+							<time datetime="2013-09-02T22:51:34+00:00">
+								September 2, 2013 at 10:51 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks for adding Emacs…<br>
+But you should mentioned that Emacs is as historic as Linux <img draggable="false" class="emoji" alt="😀" src="./Programmer’s Editors – krondo_files/1f600.svg" scale="0"></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21067#respond" onclick="return addComment.moveForm( &quot;div-comment-21067&quot;, &quot;21067&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to Eko Suprapto Wibowo">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-21068" class="comment byuser comment-author-dave bypostauthor even depth-2">
+			<article id="div-comment-21068" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-3">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21068">
+							<time datetime="2013-09-03T13:12:08+00:00">
+								September 3, 2013 at 1:12 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Fair enough! I added a link to the wikipedia history page for it.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21068#respond" onclick="return addComment.moveForm( &quot;div-comment-21068&quot;, &quot;21068&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-21074" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-21074" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/c2586ee66ad1d6819f623798fbd9028a" srcset="http://0.gravatar.com/avatar/c2586ee66ad1d6819f623798fbd9028a?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/c2586ee66ad1d6819f623798fbd9028a?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-c2586ee66ad1d6819f623798fbd9028a-0">						<b class="fn">kimtee</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21074">
+							<time datetime="2013-11-01T12:44:03+00:00">
+								November 1, 2013 at 12:44 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>you definitely should mention Sublime text <a href="http://www.sublimetext.com/" rel="nofollow">http://www.sublimetext.com/</a><br>
+good list anyway..</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21074#respond" onclick="return addComment.moveForm( &quot;div-comment-21074&quot;, &quot;21074&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to kimtee">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-21075" class="comment byuser comment-author-dave bypostauthor even depth-2">
+			<article id="div-comment-21075" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-4">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21075">
+							<time datetime="2013-11-01T15:57:37+00:00">
+								November 1, 2013 at 3:57 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I keep thinking about trying it, Sublime looks pretty awesome. This particular<br>
+list I am maintaining is just open source editors, though.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21075#respond" onclick="return addComment.moveForm( &quot;div-comment-21075&quot;, &quot;21075&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-21133" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-21133" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/474762d051ae9cb5748d2a5aa6e9b015" srcset="http://1.gravatar.com/avatar/474762d051ae9cb5748d2a5aa6e9b015?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://1.gravatar.com/avatar/474762d051ae9cb5748d2a5aa6e9b015?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-474762d051ae9cb5748d2a5aa6e9b015-0">						<b class="fn">GroundsKeeperWilly</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21133">
+							<time datetime="2014-02-06T19:20:19+00:00">
+								February 6, 2014 at 7:20 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Vat abooooot Pyscripter? ayy? Eez wery nyycee eeeediotor!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21133#respond" onclick="return addComment.moveForm( &quot;div-comment-21133&quot;, &quot;21133&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to GroundsKeeperWilly">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-21134" class="comment byuser comment-author-dave bypostauthor even depth-2">
+			<article id="div-comment-21134" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-5">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-21134">
+							<time datetime="2014-02-06T19:45:51+00:00">
+								February 6, 2014 at 7:45 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Added! Is that Delphi?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=21134#respond" onclick="return addComment.moveForm( &quot;div-comment-21134&quot;, &quot;21134&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-49987" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-49987" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/b4afa6a51d1186fd941a44b68b775983" srcset="http://2.gravatar.com/avatar/b4afa6a51d1186fd941a44b68b775983?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://2.gravatar.com/avatar/b4afa6a51d1186fd941a44b68b775983?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-b4afa6a51d1186fd941a44b68b775983-0">						<b class="fn">Roger erens</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-49987">
+							<time datetime="2014-12-05T15:13:34+00:00">
+								December 5, 2014 at 3:13 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Dave! Instead of reviewing a book, try reviewing the Leo editor, if only for the beautiful logo… The tutorials claim to take about two hours.<br>
+You’ll probably get the hang of it in a week. Python, MIT, the works.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=49987#respond" onclick="return addComment.moveForm( &quot;div-comment-49987&quot;, &quot;49987&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to Roger erens">Reply</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-53152" class="comment byuser comment-author-dave bypostauthor even depth-2">
+			<article id="div-comment-53152" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Programmer’s Editors – krondo_files/fcc237fd34a8e504f7224df0c58cc0b3" srcset="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo grav-hashed grav-hijack" height="42" width="42" originals="42" src-orig="http://0.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=42&amp;d=mm&amp;r=g" scale="1.25" id="grav-fcc237fd34a8e504f7224df0c58cc0b3-6">						<b class="fn"><a href="http://krondo.com/" rel="external nofollow" class="url">dave</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://krondo.com/programmers-editors/#comment-53152">
+							<time datetime="2014-12-20T14:06:48+00:00">
+								December 20, 2014 at 2:06 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Interesting, thanks for the link!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://krondo.com/programmers-editors/?replytocom=53152#respond" onclick="return addComment.moveForm( &quot;div-comment-53152&quot;, &quot;53152&quot;, &quot;respond&quot;, &quot;2511&quot; )" aria-label="Reply to dave">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://krondo.com/programmers-editors/#respond" style="display:none;">Cancel reply</a></small></h3>
+						<form id="commentform" class="comment-form">
+				<iframe src="./Programmer’s Editors – krondo_files/saved_resource.html" style="width:100%; height: 430px; border:0;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" scrolling="no"></iframe>
+				<!--[if !IE]><!-->
+				<script>
+					document.addEventListener( 'DOMContentLoaded', function () {
+						var commentForms = document.getElementsByClassName( 'jetpack_remote_comment' );
+						for ( var i = 0; i < commentForms.length; i++ ) {
+							commentForms[i].allowTransparency = false;
+							commentForms[i].scrolling = 'no';
+						}
+					} );
+				</script>
+				<!--<![endif]-->
+			<input id="ak_js" name="ak_js" type="hidden" value="1504619676129"></form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+		
+</div><!-- .comments-area -->
+
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="meta-3" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="http://krondo.com/wp-login.php">Log in</a></li>
+			<li><a href="http://krondo.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://krondo.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</section><section id="search-3" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://krondo.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
+</form>
+</section><section id="nav_menu-3" class="widget widget_nav_menu"><h2 class="widget-title">Sections</h2><div class="menu-sections-container"><ul id="menu-sections-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="http://krondo.com/about-me/">About me</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3713"><a href="http://krondo.com/an-introduction-to-asynchronous-programming-and-twisted/">Twisted Introduction</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2511 current_page_item menu-item-3711"><a href="http://krondo.com/programmers-editors/">Programmer’s Editors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3712"><a href="http://krondo.com/software/">Software</a></li>
+</ul></div></section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-6"><a href="http://krondo.com/category/blather/">Blather</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://krondo.com/category/books/">Books</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://krondo.com/category/software/programming/editors/" title="Programmer&#39;s Editors">Editors</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://krondo.com/category/software/programming/erlang/">Erlang</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://krondo.com/category/music/">Music</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://krondo.com/category/pictures/">Pictures</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://krondo.com/category/software/programming/">Programming</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://krondo.com/category/software/programming/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://krondo.com/category/music/recordings/">Recordings</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://krondo.com/category/software/">Software</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://krondo.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</section><section id="wpcom-goodreads-2" class="widget widget_goodreads"><h2 class="widget-title">Goodreads</h2><div class="gr_custom_widget" id="gr_custom_widget_31104786_read">  <div class="gr_custom_container_31104786_read">
+    <h2 class="gr_custom_header_31104786_read">
+    <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/31104786-dave-peticolas?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Goodreads: read</a>
+    </h2>
+      <div class="gr_custom_each_container_31104786_read">
+          <div class="gr_custom_book_container_31104786_read">
+            <a title="Big Science: Ernest Lawrence and the Invention that Launched the Military-Industrial Complex" rel="nofollow" href="https://www.goodreads.com/review/show/2097860448?utm_medium=api&amp;utm_source=custom_widget"><img alt="Big Science: Ernest Lawrence and the Invention that Launched the Military-Industrial Complex" border="0" src="./Programmer’s Editors – krondo_files/25864102.jpg" scale="0"></a>
+          </div>
+          <div class="gr_custom_rating_31104786_read">
+            <span class=" staticStars"><img alt="really liked it" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_inactive.png" scale="0"></span>
+          </div>
+          <div class="gr_custom_title_31104786_read">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/2097860448?utm_medium=api&amp;utm_source=custom_widget">Big Science: Ernest Lawrence and the Invention that Launched the Military-Industrial Complex</a>
+          </div>
+          <div class="gr_custom_author_31104786_read">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/206718.Michael_A_Hiltzik">Michael A. Hiltzik</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_31104786_read">
+          <div class="gr_custom_book_container_31104786_read">
+            <a title="Wanderer of the Wasteland" rel="nofollow" href="https://www.goodreads.com/review/show/2088070994?utm_medium=api&amp;utm_source=custom_widget"><img alt="Wanderer of the Wasteland" border="0" src="./Programmer’s Editors – krondo_files/28015231.jpg" scale="0"></a>
+          </div>
+          <div class="gr_custom_rating_31104786_read">
+            <span class=" staticStars"><img alt="liked it" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_inactive.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_inactive.png" scale="0"></span>
+          </div>
+          <div class="gr_custom_title_31104786_read">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/2088070994?utm_medium=api&amp;utm_source=custom_widget">Wanderer of the Wasteland</a>
+          </div>
+          <div class="gr_custom_author_31104786_read">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/18134.Zane_Grey">Zane Grey</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_31104786_read">
+          <div class="gr_custom_book_container_31104786_read">
+            <a title="Fifteen Dogs" rel="nofollow" href="https://www.goodreads.com/review/show/2085130722?utm_medium=api&amp;utm_source=custom_widget"><img alt="Fifteen Dogs" border="0" src="./Programmer’s Editors – krondo_files/23129923.jpg" scale="0"></a>
+          </div>
+          <div class="gr_custom_rating_31104786_read">
+            <span class=" staticStars"><img alt="it was amazing" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"></span>
+          </div>
+          <div class="gr_custom_title_31104786_read">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/2085130722?utm_medium=api&amp;utm_source=custom_widget">Fifteen Dogs</a>
+          </div>
+          <div class="gr_custom_author_31104786_read">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/1914334.Andr_Alexis">André Alexis</a>
+          </div>
+          <div class="gr_custom_review_31104786_read">
+            
+          </div>
+      </div>
+      <div class="gr_custom_each_container_31104786_read">
+          <div class="gr_custom_book_container_31104786_read">
+            <a title="The Bear and the Nightingale" rel="nofollow" href="https://www.goodreads.com/review/show/2075887148?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Bear and the Nightingale" border="0" src="./Programmer’s Editors – krondo_files/28862387.jpg" scale="0"></a>
+          </div>
+          <div class="gr_custom_rating_31104786_read">
+            <span class=" staticStars"><img alt="really liked it" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_inactive.png" scale="0"></span>
+          </div>
+          <div class="gr_custom_title_31104786_read">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/2075887148?utm_medium=api&amp;utm_source=custom_widget">The Bear and the Nightingale</a>
+          </div>
+          <div class="gr_custom_author_31104786_read">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/13922215.Katherine_Arden">Katherine  Arden</a>
+          </div>
+      </div>
+      <div class="gr_custom_each_container_31104786_read">
+          <div class="gr_custom_book_container_31104786_read">
+            <a title="The Poisoner&#39;s Handbook: Murder and the Birth of Forensic Medicine in Jazz Age New York" rel="nofollow" href="https://www.goodreads.com/review/show/2069284719?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Poisoner&#39;s Handbook: Murder and the Birth of Forensic Medicine in Jazz Age New York" border="0" src="./Programmer’s Editors – krondo_files/11186725.jpg" scale="0"></a>
+          </div>
+          <div class="gr_custom_rating_31104786_read">
+            <span class=" staticStars"><img alt="really liked it" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_active.png" scale="0"><img alt="" src="./Programmer’s Editors – krondo_files/gr_red_star_inactive.png" scale="0"></span>
+          </div>
+          <div class="gr_custom_title_31104786_read">
+            <a rel="nofollow" href="https://www.goodreads.com/review/show/2069284719?utm_medium=api&amp;utm_source=custom_widget">The Poisoner's Handbook: Murder and the Birth of Forensic Medicine in Jazz Age New York</a>
+          </div>
+          <div class="gr_custom_author_31104786_read">
+            by <a rel="nofollow" href="https://www.goodreads.com/author/show/16175.Deborah_Blum">Deborah Blum</a>
+          </div>
+      </div>
+  <br style="clear: both">
+  <center>
+    <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="./Programmer’s Editors – krondo_files/widget_logo.gif" scale="0"></a>
+  </center>
+  <noscript>
+    Share &lt;a rel="nofollow" href="https://www.goodreads.com/"&gt;book reviews&lt;/a&gt; and ratings with Dave, and even join a &lt;a rel="nofollow" href="https://www.goodreads.com/group"&gt;book club&lt;/a&gt; on Goodreads.
+  </noscript>
+  </div>
+</div>
+<script src="./Programmer’s Editors – krondo_files/31104786.Goodreads- read"></script>
+</section><section id="top-posts-2" class="widget widget_top-posts"><h2 class="widget-title">Top Posts &amp; Pages</h2><ul>				<li>
+										<a href="http://krondo.com/an-introduction-to-asynchronous-programming-and-twisted/" class="bump-view" data-bump-view="tp">
+						Twisted Introduction					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/slow-poetry-and-the-apocalypse/" class="bump-view" data-bump-view="tp">
+						Slow Poetry and the Apocalypse					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/in-which-we-begin-at-the-beginning/" class="bump-view" data-bump-view="tp">
+						In Which We Begin at the Beginning					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/our-eye-beams-begin-to-twist/" class="bump-view" data-bump-view="tp">
+						Our Eye-beams Begin to Twist					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/twisted-poetry/" class="bump-view" data-bump-view="tp">
+						Twisted Poetry					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/twistier-poetry/" class="bump-view" data-bump-view="tp">
+						Twistier Poetry					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/an-interlude-deferred/" class="bump-view" data-bump-view="tp">
+						An Interlude,&nbsp; Deferred					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/and-then-we-took-it-higher/" class="bump-view" data-bump-view="tp">
+						And Then We Took It Higher					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/just-another-way-to-spell-callback/" class="bump-view" data-bump-view="tp">
+						Just Another Way to Spell "Callback"					</a>
+									</li>
+							<li>
+										<a href="http://krondo.com/twisted-daemonologie/" class="bump-view" data-bump-view="tp">
+						Twisted Daemonologie					</a>
+									</li>
+			</ul></section><section id="linkcat-2" class="widget widget_links"><h2 class="widget-title">Blogroll</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://bethdeitchman.com/blog" rel="spouse sweetheart" title="Beth, an actor. Also, my wife.">bethdeitchman</a></li>
+<li><a href="http://blog.counsyl.com/">counsyl blog</a></li>
+<li><a href="http://heifer.org/">Heifer International</a></li>
+<li><a href="http://www.kiva.org/" title="Make your own micro-loans.">Kiva</a></li>
+<li><a href="http://picasaweb.google.com/dave.peticolas" rel="me" title="My Picasa albums">Krondo pictures</a></li>
+<li><a href="http://luminouscreaturespress.com/" rel="spouse" title="Beth’s publishing company">Luminous Creatures</a></li>
+<li><a href="https://github.com/jdavisp3" rel="me" title="My Git Repositories">my git repos</a></li>
+<li><a href="http://ponsfordsplace.com/" title="Best Bread in the Bay Area">ponsfordsplace</a></li>
+<li><a href="http://puttermeister.blogspot.com/" title="Amy, a putterer.">Puttermeister</a></li>
+<li><a href="http://nature.org/">The Nature Conservancy</a></li>
+<li><a href="http://water.org/" title="Charity Water">water.org</a></li>
+<li><a href="http://www.webfaction.com/?affiliate=dpeticol" title="Awesome web hosting.">webfaction</a></li>
+
+	</ul>
+</section>
+<section id="calendar-2" class="widget widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>September 2017</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://krondo.com/2017/01/">« Jan</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td>4</td><td id="today">5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></section><section id="blog_subscription-3" class="widget jetpack_subscription_widget"><h2 class="widget-title">Subscribe to Blog via Email</h2>
+			<form action="http://krondo.com/programmers-editors/#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-3">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div><p>Join 121 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-3" style="clip: rect(1px 1px 1px 1px); position: absolute; height: 1px; width: 1px; overflow: hidden;">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-3" placeholder="Email Address">
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="source" value="http://krondo.com/programmers-editors/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3">
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget">
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-3]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-3'),
+					input = d.getElementById('subscribe-field-blog_subscription-3'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</section>
+<!-- Start of Kindle This Widget -->
+<section id="kindle_this-3" class="widget widget_kindle_this"><h2 class="widget-title">Kindle It!</h2>		<div style="font-size:.9em;">
+        <form action="http://krondo.com/programmers-editors/" method="GET" onsubmit="kpg_kindle_it(this);return false;">
+				<span style="color:red;font-weight:bold" id="kpg_kc_1"></span>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>your kindle user name:</legend>
+				<input style="font-size:.9em;" size="32" name="kindle_email" type="text" value="your-id"><br>(you@kindle.com, without @kindle.com)</fieldset>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>Approved E-mail:</legend>
+				<input style="font-size:.9em;" size="32" name="from_email" type="text" value="good@email"><br>(Approved E-mail that kindle will accept)
+				</fieldset>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>Kindle base email</legend>
+				  <input name="kindlecom" type="radio" value="kindle.com" checked="checked">
+  kindle.com | 
+  <input name="kindlecom" type="radio" value="free.kindle.com"> 
+  free.kindle.com
+<br>(Use kindle.com to download on wispernet or wifi, use free.kindle.com for wifi only.)<br><i>using kindle.com may incur charges</i>)
+				</fieldset>
+				<input type="submit" name="kpg_ksub" value="send to kindle">
+				<input type="hidden" name="kpg_kindle_count" value="1">
+				<input type="hidden" name="kpg_kindle_aurl" value="http://krondo.com/wp-admin/admin-ajax.php">
+				<input type="hidden" name="kpg_kindle_nonce" value="3b0ce55ce3">
+				<input type="hidden" name="kpg_kindle_posts" value="a:1:{i:0;i:2511;}">
+		</form>		</div>		
+		</section>
+<!-- end of Kindle This Widget -->
+<section id="archives-3" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<label class="screen-reader-text" for="archives-dropdown-3">Archives</label>
+		<select id="archives-dropdown-3" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			
+			<option value="">Select Month</option>
+				<option value="http://krondo.com/2017/01/"> January 2017 &nbsp;(2)</option>
+	<option value="http://krondo.com/2016/11/"> November 2016 &nbsp;(1)</option>
+	<option value="http://krondo.com/2016/10/"> October 2016 &nbsp;(1)</option>
+	<option value="http://krondo.com/2016/08/"> August 2016 &nbsp;(1)</option>
+	<option value="http://krondo.com/2016/07/"> July 2016 &nbsp;(1)</option>
+	<option value="http://krondo.com/2016/06/"> June 2016 &nbsp;(2)</option>
+	<option value="http://krondo.com/2016/05/"> May 2016 &nbsp;(3)</option>
+	<option value="http://krondo.com/2016/04/"> April 2016 &nbsp;(4)</option>
+	<option value="http://krondo.com/2016/03/"> March 2016 &nbsp;(8)</option>
+	<option value="http://krondo.com/2016/02/"> February 2016 &nbsp;(8)</option>
+	<option value="http://krondo.com/2016/01/"> January 2016 &nbsp;(5)</option>
+	<option value="http://krondo.com/2015/12/"> December 2015 &nbsp;(6)</option>
+	<option value="http://krondo.com/2015/11/"> November 2015 &nbsp;(11)</option>
+	<option value="http://krondo.com/2015/10/"> October 2015 &nbsp;(4)</option>
+	<option value="http://krondo.com/2015/09/"> September 2015 &nbsp;(4)</option>
+	<option value="http://krondo.com/2015/08/"> August 2015 &nbsp;(9)</option>
+	<option value="http://krondo.com/2015/07/"> July 2015 &nbsp;(4)</option>
+	<option value="http://krondo.com/2015/06/"> June 2015 &nbsp;(7)</option>
+	<option value="http://krondo.com/2015/05/"> May 2015 &nbsp;(9)</option>
+	<option value="http://krondo.com/2015/04/"> April 2015 &nbsp;(9)</option>
+	<option value="http://krondo.com/2015/03/"> March 2015 &nbsp;(2)</option>
+	<option value="http://krondo.com/2015/02/"> February 2015 &nbsp;(6)</option>
+	<option value="http://krondo.com/2015/01/"> January 2015 &nbsp;(4)</option>
+	<option value="http://krondo.com/2014/12/"> December 2014 &nbsp;(8)</option>
+	<option value="http://krondo.com/2014/11/"> November 2014 &nbsp;(9)</option>
+	<option value="http://krondo.com/2014/10/"> October 2014 &nbsp;(10)</option>
+	<option value="http://krondo.com/2014/09/"> September 2014 &nbsp;(4)</option>
+	<option value="http://krondo.com/2014/08/"> August 2014 &nbsp;(7)</option>
+	<option value="http://krondo.com/2014/07/"> July 2014 &nbsp;(7)</option>
+	<option value="http://krondo.com/2014/06/"> June 2014 &nbsp;(4)</option>
+	<option value="http://krondo.com/2014/05/"> May 2014 &nbsp;(7)</option>
+	<option value="http://krondo.com/2014/04/"> April 2014 &nbsp;(4)</option>
+	<option value="http://krondo.com/2014/03/"> March 2014 &nbsp;(5)</option>
+	<option value="http://krondo.com/2014/02/"> February 2014 &nbsp;(4)</option>
+	<option value="http://krondo.com/2014/01/"> January 2014 &nbsp;(5)</option>
+	<option value="http://krondo.com/2013/12/"> December 2013 &nbsp;(8)</option>
+	<option value="http://krondo.com/2013/11/"> November 2013 &nbsp;(5)</option>
+	<option value="http://krondo.com/2013/10/"> October 2013 &nbsp;(4)</option>
+	<option value="http://krondo.com/2013/09/"> September 2013 &nbsp;(1)</option>
+	<option value="http://krondo.com/2013/08/"> August 2013 &nbsp;(9)</option>
+	<option value="http://krondo.com/2013/07/"> July 2013 &nbsp;(1)</option>
+	<option value="http://krondo.com/2013/06/"> June 2013 &nbsp;(4)</option>
+	<option value="http://krondo.com/2013/05/"> May 2013 &nbsp;(4)</option>
+	<option value="http://krondo.com/2013/04/"> April 2013 &nbsp;(4)</option>
+	<option value="http://krondo.com/2013/03/"> March 2013 &nbsp;(5)</option>
+	<option value="http://krondo.com/2013/02/"> February 2013 &nbsp;(2)</option>
+	<option value="http://krondo.com/2013/01/"> January 2013 &nbsp;(9)</option>
+	<option value="http://krondo.com/2012/12/"> December 2012 &nbsp;(3)</option>
+	<option value="http://krondo.com/2012/11/"> November 2012 &nbsp;(2)</option>
+	<option value="http://krondo.com/2012/10/"> October 2012 &nbsp;(1)</option>
+	<option value="http://krondo.com/2012/09/"> September 2012 &nbsp;(3)</option>
+	<option value="http://krondo.com/2012/08/"> August 2012 &nbsp;(3)</option>
+	<option value="http://krondo.com/2012/07/"> July 2012 &nbsp;(8)</option>
+	<option value="http://krondo.com/2012/06/"> June 2012 &nbsp;(5)</option>
+	<option value="http://krondo.com/2012/05/"> May 2012 &nbsp;(6)</option>
+	<option value="http://krondo.com/2012/04/"> April 2012 &nbsp;(2)</option>
+	<option value="http://krondo.com/2012/03/"> March 2012 &nbsp;(3)</option>
+	<option value="http://krondo.com/2012/02/"> February 2012 &nbsp;(2)</option>
+	<option value="http://krondo.com/2012/01/"> January 2012 &nbsp;(4)</option>
+	<option value="http://krondo.com/2011/12/"> December 2011 &nbsp;(3)</option>
+	<option value="http://krondo.com/2011/11/"> November 2011 &nbsp;(2)</option>
+	<option value="http://krondo.com/2011/10/"> October 2011 &nbsp;(3)</option>
+	<option value="http://krondo.com/2011/09/"> September 2011 &nbsp;(12)</option>
+	<option value="http://krondo.com/2011/08/"> August 2011 &nbsp;(7)</option>
+	<option value="http://krondo.com/2011/07/"> July 2011 &nbsp;(10)</option>
+	<option value="http://krondo.com/2011/06/"> June 2011 &nbsp;(5)</option>
+	<option value="http://krondo.com/2011/05/"> May 2011 &nbsp;(3)</option>
+	<option value="http://krondo.com/2011/04/"> April 2011 &nbsp;(16)</option>
+	<option value="http://krondo.com/2011/03/"> March 2011 &nbsp;(3)</option>
+	<option value="http://krondo.com/2011/02/"> February 2011 &nbsp;(2)</option>
+	<option value="http://krondo.com/2011/01/"> January 2011 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/12/"> December 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/11/"> November 2010 &nbsp;(9)</option>
+	<option value="http://krondo.com/2010/10/"> October 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/09/"> September 2010 &nbsp;(5)</option>
+	<option value="http://krondo.com/2010/08/"> August 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/07/"> July 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/06/"> June 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/05/"> May 2010 &nbsp;(10)</option>
+	<option value="http://krondo.com/2010/04/"> April 2010 &nbsp;(8)</option>
+	<option value="http://krondo.com/2010/03/"> March 2010 &nbsp;(6)</option>
+	<option value="http://krondo.com/2010/02/"> February 2010 &nbsp;(2)</option>
+	<option value="http://krondo.com/2010/01/"> January 2010 &nbsp;(8)</option>
+	<option value="http://krondo.com/2009/12/"> December 2009 &nbsp;(7)</option>
+	<option value="http://krondo.com/2009/11/"> November 2009 &nbsp;(3)</option>
+	<option value="http://krondo.com/2009/10/"> October 2009 &nbsp;(4)</option>
+	<option value="http://krondo.com/2009/09/"> September 2009 &nbsp;(10)</option>
+	<option value="http://krondo.com/2009/08/"> August 2009 &nbsp;(11)</option>
+	<option value="http://krondo.com/2009/07/"> July 2009 &nbsp;(5)</option>
+	<option value="http://krondo.com/2009/06/"> June 2009 &nbsp;(9)</option>
+	<option value="http://krondo.com/2009/05/"> May 2009 &nbsp;(5)</option>
+	<option value="http://krondo.com/2009/04/"> April 2009 &nbsp;(13)</option>
+	<option value="http://krondo.com/2009/03/"> March 2009 &nbsp;(7)</option>
+	<option value="http://krondo.com/2009/02/"> February 2009 &nbsp;(7)</option>
+	<option value="http://krondo.com/2009/01/"> January 2009 &nbsp;(3)</option>
+	<option value="http://krondo.com/2008/12/"> December 2008 &nbsp;(4)</option>
+	<option value="http://krondo.com/2008/11/"> November 2008 &nbsp;(11)</option>
+	<option value="http://krondo.com/2008/10/"> October 2008 &nbsp;(5)</option>
+	<option value="http://krondo.com/2008/09/"> September 2008 &nbsp;(11)</option>
+	<option value="http://krondo.com/2008/08/"> August 2008 &nbsp;(14)</option>
+	<option value="http://krondo.com/2008/07/"> July 2008 &nbsp;(5)</option>
+	<option value="http://krondo.com/2008/06/"> June 2008 &nbsp;(7)</option>
+	<option value="http://krondo.com/2008/05/"> May 2008 &nbsp;(6)</option>
+	<option value="http://krondo.com/2008/04/"> April 2008 &nbsp;(6)</option>
+	<option value="http://krondo.com/2008/03/"> March 2008 &nbsp;(4)</option>
+	<option value="http://krondo.com/2008/02/"> February 2008 &nbsp;(6)</option>
+	<option value="http://krondo.com/2008/01/"> January 2008 &nbsp;(3)</option>
+	<option value="http://krondo.com/2007/12/"> December 2007 &nbsp;(10)</option>
+	<option value="http://krondo.com/2007/11/"> November 2007 &nbsp;(13)</option>
+	<option value="http://krondo.com/2007/10/"> October 2007 &nbsp;(9)</option>
+	<option value="http://krondo.com/2007/09/"> September 2007 &nbsp;(11)</option>
+	<option value="http://krondo.com/2007/08/"> August 2007 &nbsp;(17)</option>
+	<option value="http://krondo.com/2007/07/"> July 2007 &nbsp;(15)</option>
+	<option value="http://krondo.com/2007/06/"> June 2007 &nbsp;(6)</option>
+	<option value="http://krondo.com/2007/05/"> May 2007 &nbsp;(6)</option>
+	<option value="http://krondo.com/2007/04/"> April 2007 &nbsp;(11)</option>
+	<option value="http://krondo.com/2007/03/"> March 2007 &nbsp;(6)</option>
+	<option value="http://krondo.com/2007/02/"> February 2007 &nbsp;(8)</option>
+	<option value="http://krondo.com/2007/01/"> January 2007 &nbsp;(10)</option>
+	<option value="http://krondo.com/2006/12/"> December 2006 &nbsp;(1)</option>
+	<option value="http://krondo.com/2006/11/"> November 2006 &nbsp;(12)</option>
+	<option value="http://krondo.com/2006/10/"> October 2006 &nbsp;(11)</option>
+	<option value="http://krondo.com/2006/09/"> September 2006 &nbsp;(10)</option>
+	<option value="http://krondo.com/2006/08/"> August 2006 &nbsp;(7)</option>
+	<option value="http://krondo.com/2006/07/"> July 2006 &nbsp;(7)</option>
+	<option value="http://krondo.com/2006/06/"> June 2006 &nbsp;(6)</option>
+	<option value="http://krondo.com/2006/05/"> May 2006 &nbsp;(8)</option>
+	<option value="http://krondo.com/2006/04/"> April 2006 &nbsp;(6)</option>
+	<option value="http://krondo.com/2006/03/"> March 2006 &nbsp;(7)</option>
+	<option value="http://krondo.com/2006/02/"> February 2006 &nbsp;(5)</option>
+	<option value="http://krondo.com/2006/01/"> January 2006 &nbsp;(3)</option>
+	<option value="http://krondo.com/2005/12/"> December 2005 &nbsp;(9)</option>
+	<option value="http://krondo.com/2005/11/"> November 2005 &nbsp;(9)</option>
+	<option value="http://krondo.com/2005/10/"> October 2005 &nbsp;(12)</option>
+	<option value="http://krondo.com/2005/09/"> September 2005 &nbsp;(11)</option>
+	<option value="http://krondo.com/2005/08/"> August 2005 &nbsp;(13)</option>
+	<option value="http://krondo.com/2005/07/"> July 2005 &nbsp;(10)</option>
+	<option value="http://krondo.com/2005/06/"> June 2005 &nbsp;(8)</option>
+	<option value="http://krondo.com/2005/04/"> April 2005 &nbsp;(7)</option>
+	<option value="http://krondo.com/2005/02/"> February 2005 &nbsp;(3)</option>
+	<option value="http://krondo.com/2005/01/"> January 2005 &nbsp;(16)</option>
+	<option value="http://krondo.com/2004/11/"> November 2004 &nbsp;(3)</option>
+	<option value="http://krondo.com/2004/10/"> October 2004 &nbsp;(2)</option>
+	<option value="http://krondo.com/2004/09/"> September 2004 &nbsp;(2)</option>
+	<option value="http://krondo.com/2004/08/"> August 2004 &nbsp;(4)</option>
+	<option value="http://krondo.com/2004/07/"> July 2004 &nbsp;(6)</option>
+	<option value="http://krondo.com/2004/06/"> June 2004 &nbsp;(125)</option>
+	<option value="http://krondo.com/2004/05/"> May 2004 &nbsp;(67)</option>
+	<option value="http://krondo.com/2004/04/"> April 2004 &nbsp;(20)</option>
+	<option value="http://krondo.com/2004/03/"> March 2004 &nbsp;(30)</option>
+	<option value="http://krondo.com/2004/02/"> February 2004 &nbsp;(25)</option>
+	<option value="http://krondo.com/2003/11/"> November 2003 &nbsp;(10)</option>
+	<option value="http://krondo.com/2003/10/"> October 2003 &nbsp;(4)</option>
+	<option value="http://krondo.com/2003/09/"> September 2003 &nbsp;(12)</option>
+	<option value="http://krondo.com/2003/08/"> August 2003 &nbsp;(12)</option>
+	<option value="http://krondo.com/2003/07/"> July 2003 &nbsp;(8)</option>
+	<option value="http://krondo.com/2003/06/"> June 2003 &nbsp;(2)</option>
+	<option value="http://krondo.com/2003/05/"> May 2003 &nbsp;(1)</option>
+	<option value="http://krondo.com/2003/04/"> April 2003 &nbsp;(3)</option>
+	<option value="http://krondo.com/2003/03/"> March 2003 &nbsp;(8)</option>
+	<option value="http://krondo.com/2003/02/"> February 2003 &nbsp;(16)</option>
+	<option value="http://krondo.com/2003/01/"> January 2003 &nbsp;(18)</option>
+	<option value="http://krondo.com/2002/12/"> December 2002 &nbsp;(21)</option>
+	<option value="http://krondo.com/2002/11/"> November 2002 &nbsp;(39)</option>
+	<option value="http://krondo.com/2002/10/"> October 2002 &nbsp;(29)</option>
+	<option value="http://krondo.com/2002/09/"> September 2002 &nbsp;(76)</option>
+	<option value="http://krondo.com/2002/08/"> August 2002 &nbsp;(40)</option>
+
+		</select>
+		</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="Footer Primary Menu">
+					<div class="menu-sections-container"><ul id="menu-sections-2" class="primary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="http://krondo.com/about-me/">About me</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3713"><a href="http://krondo.com/an-introduction-to-asynchronous-programming-and-twisted/">Twisted Introduction</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2511 current_page_item menu-item-3711"><a href="http://krondo.com/programmers-editors/">Programmer’s Editors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3712"><a href="http://krondo.com/software/">Software</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://krondo.com/" rel="home">krondo</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+	<div style="display:none">
+	<div class="grofile-hash-map-c78456de026131270c94b1ccc727ee94">
+	</div>
+	<div class="grofile-hash-map-fcc237fd34a8e504f7224df0c58cc0b3">
+	</div>
+	<div class="grofile-hash-map-2d2fc489f36611a0a1d33a5708449935">
+	</div>
+	<div class="grofile-hash-map-f7daf89168df6365f2d0cec7bd1affb8">
+	</div>
+	<div class="grofile-hash-map-c2586ee66ad1d6819f623798fbd9028a">
+	</div>
+	<div class="grofile-hash-map-474762d051ae9cb5748d2a5aa6e9b015">
+	</div>
+	<div class="grofile-hash-map-b4afa6a51d1186fd941a44b68b775983">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/krondo.com\/programmers-editors\/":2511};
+	</script>
+			
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/photon.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/devicepx-jetpack.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/gprofiles.js.下载"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/wpgroho.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/skip-link-focus-fix.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/comment-reply.js.下载"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/functions.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/wp-embed.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/postmessage.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/jquery.jetpack-resize.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/queuehandler.js.下载"></script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/form.js.下载"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Programmer’s Editors – krondo_files/sharing.js.下载"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-tumblr', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+	<iframe src="./Programmer’s Editors – krondo_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+	<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+	
+		<!--[if IE]>
+		<script type="text/javascript">
+		if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+			// window.location.reload() doesn't respect the Hash in IE
+			window.location.hash = window.location.hash;
+		}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			var comm_par_el = document.getElementById( 'comment_parent' ),
+			    comm_par = (comm_par_el && comm_par_el.value) ? comm_par_el.value : '',
+			    frame = document.getElementById( 'jetpack_remote_comment' ),
+			    tellFrameNewParent;
+
+			tellFrameNewParent = function() {
+				if ( comm_par ) {
+					frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=21035566&postid=2511&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=5.1&sig=ea9abd9e467d5b7ceb4bbda7137c8d90d20b3230#parent=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+				} else {
+					frame.src = "http://jetpack.wordpress.com/jetpack-comment/?blogid=21035566&postid=2511&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=5.1&sig=ea9abd9e467d5b7ceb4bbda7137c8d90d20b3230#parent=http%3A%2F%2Fkrondo.com%2Fprogrammers-editors%2F";
+				}
+			};
+
+	
+			if ( 'undefined' !== typeof addComment ) {
+				addComment._Jetpack_moveForm = addComment.moveForm;
+
+				addComment.moveForm = function( commId, parentId, respondId, postId ) {
+					var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ), cancelClick, cancel;
+
+					if ( false === returnValue ) {
+						cancel = document.getElementById( 'cancel-comment-reply-link' );
+						cancelClick = cancel.onclick;
+						cancel.onclick = function() {
+							var cancelReturn = cancelClick.call( this );
+							if ( false !== cancelReturn ) {
+								return cancelReturn;
+							}
+
+							if ( !comm_par ) {
+								return cancelReturn;
+							}
+
+							comm_par = 0;
+
+							tellFrameNewParent();
+
+							return cancelReturn;
+						};
+					}
+
+					if ( comm_par == parentId ) {
+						return returnValue;
+					}
+
+					comm_par = parentId;
+
+					tellFrameNewParent();
+
+					return returnValue;
+				};
+			}
+
+	
+			if ( window.postMessage ) {
+				if ( document.addEventListener ) {
+					window.addEventListener( 'message', function( event ) {
+						if ( "http:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				} else if ( document.attachEvent ) {
+					window.attachEvent( 'message', function( event ) {
+						if ( "http:\/\/jetpack.wordpress.com" !== event.origin ) {
+							return;
+						}
+
+						jQuery( frame ).height( event.data );
+					} );
+				}
+			}
+		</script>
+
+	<script type="text/javascript" src="./Programmer’s Editors – krondo_files/e-201736.js.下载" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.1',blog:'21035566',post:'2511',tz:'-7',srv:'krondo.com'} ]);
+	_stq.push([ 'clickTrackerInit', '21035566', '2511' ]);
+</script>
+
+
+<div id="sharing_email" style="display: none;">
+		<form action="http://krondo.com/programmers-editors/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			<script>jQuery( document ).ready( function(){ document.getElementById('jetpack-source_f_name').value = '' });</script>
+			
+			<img style="float: right; display: none" class="loading" src="./Programmer’s Editors – krondo_files/loading.gif" alt="loading" width="16" height="16" scale="0">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="http://krondo.com/programmers-editors/#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div><img src="./Programmer’s Editors – krondo_files/g.gif" alt=":)" width="6" height="5" id="wpstats" scale="0"></body></html>

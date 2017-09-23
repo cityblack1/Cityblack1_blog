@@ -1,0 +1,166 @@
+2017-09-16 10:26:03,411 [b'uWSGIWorker2Core0':140488556801280] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /测试用的分类/你是好人吗/
+Traceback (most recent call last):
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/wagtail/wagtailcore/views.py", line 26, in serve
+    return page.serve(request, *args, **kwargs)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/wagtail/wagtailcore/models.py", line 773, in serve
+    self.get_context(request, *args, **kwargs)
+  File "/home/cityblack1/Desktop/new_blog/apps/blog/models.py", line 141, in get_context
+    print(self.read_times)
+OSError: [Errno 5] Input/output error
+2017-09-16 10:37:27,178 [b'uWSGIWorker2Core1':140488389105408] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /测试用的分类/你是好人吗/
+Traceback (most recent call last):
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/wagtail/wagtailcore/views.py", line 26, in serve
+    return page.serve(request, *args, **kwargs)
+  File "/home/cityblack1/virtualenvs/new_blog/lib/python3.5/site-packages/wagtail/wagtailcore/models.py", line 773, in serve
+    self.get_context(request, *args, **kwargs)
+  File "/home/cityblack1/Desktop/new_blog/apps/blog/models.py", line 141, in get_context
+    print(self.read_times)
+OSError: [Errno 5] Input/output error
+2017-09-21 00:17:31,537 [b'uWSGIWorker3Core3':140073087039232] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/pages/add/blog/aboutpage/3/preview/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 00:17:36,538 [b'uWSGIWorker3Core2':140073095431936] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/pages/add/blog/aboutpage/3/preview/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 00:17:48,754 [b'uWSGIWorker3Core1':140073103824640] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 00:18:07,336 [b'uWSGIWorker3Core0':140073203533632] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 00:18:07,397 [b'uWSGIWorker3Core0':140073203533632] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/pages/12/edit/preview/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 00:18:16,960 [b'uWSGIWorker3Core2':140073095431936] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: blog/about_page.html
+2017-09-21 02:34:41,926 [b'uWSGIWorker3Core1':139848386176768] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+2017-09-21 03:10:27,177 [b'uWSGIWorker2Core2':140664222103296] [django.request:124] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /users/login/
+Traceback (most recent call last):
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 84, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/response.py", line 68, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/cityblack1/sites/www.cityblack1.cc/nb/lib/python3.4/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html

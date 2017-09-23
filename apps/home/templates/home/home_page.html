@@ -1,0 +1,89 @@
+{% extends 'home/base.html' %}
+{% load custom_tags %}
+{% load wagtailcore_tags %}
+{% load pagination_tags %}
+{% load comments %}
+
+{% block content %}
+    {% block search_message %}
+    {% endblock %}
+
+    {% autopaginate blogs 4 %}
+    {% for blog in blogs %}
+{#        <script>#}
+{#        $(document).ready(function(){#}
+{#            $(".btn-4").hover(function()#}
+{#            {$(this).animate({background: 'rgba(255,255,255,.9)', color: '#007acc'}, 0);#}
+{#            },function(){#}
+{#                $(this).animate({background: 'rgb(35, 34, 34)', color: '#fff'}, 0)#}
+{#            });#}
+{#        });#}
+{#        </script>#}
+    <article class="post type-post status-publish format-standard hentry category-uncategorized">
+
+	<header class="entry-header">
+		<h2 class="entry-title"><a href="{{ blog.url }}" rel="bookmark">{{ blog.title }}</a></h2>
+    </header><!-- .entry-header -->
+	<div class="entry-content">
+        {% if blog.body.raw_text %}
+            {{ blog.body.raw_text|safe|striptags|truncatewords_html:'5' }}
+        {% else %}
+            {% filter truncatewords_html:'20'%}
+                {% include "blog/includes/streamfield.html" with content=blog.body %}
+            {% endfilter %}
+        {% endif %}
+            <p></p>
+                <p><a href="{% pageurl blog %}"><button class="btn-4">Continue Reading...</button></a></p>
+
+            <div class="sharedaddy sd-sharing-enabled">
+                <div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing">
+                    <h3 class="sd-title">Share this:</h3>
+                    <div class="sd-content">
+                        <ul>
+                            <li class="share-google-plus-1">
+                                <a rel="nofollow" data-shared="sharing-google-4001" class="share-google-plus-1 sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li>
+                            <li class="share-linkedin">
+                                <a rel="nofollow" data-shared="sharing-linkedin-4001" class="share-linkedin sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li>
+                            <li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-4001" class="share-facebook sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-4001" class="share-twitter sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li><a href="http://krondo.com/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul>
+                        <div class="sharing-hidden">
+                            <div class="inner" style="display: none;">
+                                <ul><li class="share-reddit">
+                                    <a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=tumblr&amp;nb=1" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-end"></li><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-4001" class="share-pinterest sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=pinterest&amp;nb=1" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li><li class="share-email share-service-visible"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="http://krondo.com/review-the-undoing-project-a-friendship-that-changed-our-minds/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end">
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <footer class="entry-footer">
+            <span class="posted-on">
+               作者：<a href="{% slugurl 'about' %}" rel="author">{{ blog.owner.username }}</a>
+            </span>
+            <span class="posted-on">
+               阅读：<span class="screen-reader-text"></span><a href="{% pageurl blog %}" rel="author">{{ blog.blog_page.visit_times }}</a>
+            </span>
+                        <span class="posted-on">
+                <span class="screen-reader-text">
+                </span>分类：<a href="{% pageurl blog.parent.specific %}" rel="categoty">{{ blog.parent.specific.title }}</a>
+            </span>
+              {% get_comment_count for blog as comment_count %}
+
+            <span class="posted-on">
+                <span class="screen-reader-text"></span>{{ blog.date|date:'Y年n月j日' }}
+            </span>
+            <span class="comments-link"><a href="{% pageurl blog %}#comments">评论({{ comment_count }})<span class="screen-reader-text"></span></a></span>
+        </footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+        <br>
+        <br>
+        {% if not forloop.last %}
+        <hr>
+            {% else %}
+            <br><br>
+        {% endif %}
+
+    {% endfor %}
+    {% paginate %}
+{% endblock %}

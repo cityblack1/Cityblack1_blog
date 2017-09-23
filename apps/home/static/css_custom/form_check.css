@@ -1,0 +1,14 @@
+.highlight2 {
+    border: 1px solid #FF0000 !important;
+    color: #f00 !important;
+}
+
+.succeed {
+    float: right;
+    color: #0a6ebd;
+}
+
+.fail {
+    float: right;
+    color: red;
+}
