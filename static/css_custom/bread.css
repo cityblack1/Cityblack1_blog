@@ -1,0 +1,103 @@
+.breadcrumb{padding:8px 15px;margin-bottom:20px;list-style:none;border-radius:4px}.breadcrumb>li{display:inline-block}.breadcrumb>li+li:before{padding:0 5px;color:#ccc;content:"/\00a0"}.breadcrumb>.active{color:#777}
+/*.breadcrumb {*/
+    /*margin-left: 0;*/
+  /*margin-top: 0;*/
+  /*margin-bottom: 0;*/
+  /*padding-left: 0;*/
+  /*list-style-type: none;*/
+  /*font-style: normal;*/
+  /*overflow: hidden;*/
+  /*padding-top: 1.4em;*/
+  /*font-size: 0.85em;*/
+/*}*/
+
+/*.breadcrumb li {*/
+  /*list-style-type: none;*/
+  /*font-style: normal;*/
+/*}*/
+
+/*.breadcrumb:before, .breadcrumb:after {*/
+  /*content: ' ';*/
+  /*display: table;*/
+/*}*/
+
+/*.breadcrumb:after {*/
+  /*clear: both;*/
+/*}*/
+
+/*.breadcrumb li {*/
+  /*display: block;*/
+  /*float: left;*/
+  /*padding: 0.5em 1.3em;*/
+  /*position: relative;*/
+  /*text-decoration: none;*/
+  /*color: #c7c5c5;*/
+  /*white-space: nowrap;*/
+  /*line-height: 1.5em;*/
+/*}*/
+
+/*.breadcrumb li a,*/
+/*.breadcrumb li span {*/
+  /*color: #1f1e1e;*/
+  /*display: block;*/
+  /*max-width: 12em;*/
+  /*white-space: nowrap;*/
+  /*text-overflow: ellipsis;*/
+  /*overflow: hidden;*/
+  /*line-height: 1.6em;*/
+  /*padding-right: 1em;*/
+/*}*/
+
+/*.breadcrumb li a:after,*/
+/*.breadcrumb li span:after {*/
+  /*right: 0;*/
+  /*position: absolute;*/
+  /*font-family: wagtail;*/
+  /*content: 'n';*/
+  /*padding-left: 20px;*/
+  /*font-size: 2em;*/
+  /*color: #54626b;*/
+  /*line-height: 0.9em;*/
+/*}*/
+
+/*.breadcrumb li:hover {*/
+  /*background: #afb4a1;*/
+/*}*/
+
+/*.breadcrumb li:hover a {*/
+  /*color: #fff;*/
+/*}*/
+
+/*.breadcrumb li:hover:after {*/
+  /*border-left-color: #246060;*/
+/*}*/
+
+/*.breadcrumb li.home a {*/
+  /*padding-right: 0;*/
+  /*text-align: center;*/
+  /*width: 3em;*/
+  /*font-size: 1em;*/
+/*}*/
+
+/*.breadcrumb li.home a:before {*/
+  /*font-size: 1.15rem;*/
+  /*line-height: 0.85em;*/
+  /*padding-top: 0.1em;*/
+/*}*/
+
+/*.breadcrumb li.home a:after {*/
+  /*right: -0.3em;*/
+/*}*/
+
+/*header .breadcrumb li:before {*/
+  /*border-left: 1em solid #fff;*/
+  /*position: absolute;*/
+  /*left: 0;*/
+  /*top: 0;*/
+/*}*/
+
+/*.breadcrumb.single li a {*/
+  /*white-space: nowrap;*/
+  /*text-overflow: inherit;*/
+  /*max-width: 100%;*/
+/*}*/
