@@ -26,6 +26,8 @@ urlpatterns = [
 
     url(r'^record/', include('record.urls', namespace='访问记录')),
 
+    url(r'^feedback/', include('mycomment.urls')),
+
     url(r'^django-admin/', include(admin.site.urls)),
 
     url(r'^users/', include(user_urls, namespace='users')),

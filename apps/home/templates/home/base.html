@@ -2,29 +2,21 @@
 {% load custom_tags wagtailcore_tags %}
 <!DOCTYPE html>
 <html lang="zh-cn" class="js">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel='shortcut' href={% static 'favicon.ico' %} />
+<head>
+    <meta property="wb:webmaster" content="774b30dafc275523" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <title style='"Arial","Microsoft YaHei","黑体","宋体",sans-serif;'>{% block title %}{{ page.title }} - 褐色城市{% endblock %}</title>
-<link rel="stylesheet" id="twentysixteen-jetpack-css" href="{% static "twentysixteen.css" %}" type="text/css" media="all">
-
 <link rel="stylesheet" id="genericons-css" href="{% static "genericons.css" %}" type="text/css" media="all">
-
         <link rel="stylesheet" href="{% static "css_custom/form_check.css" %}" type="text/css">
-        <link rel="stylesheet" href="{% static "highlights/default.css" %}" type="text/css">
-            <script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
-
+            <script src="//libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
 
 {% block css %}
 {% endblock %}
-
-
-
-
 <link rel="stylesheet" id="twentysixteen-style-css" href="{% static "style(1).css" %}" type="text/css" media="all">
 <link rel="stylesheet" id="jetpack-top-posts-widget-css" href="{% static "css_custom/bread.css" %}" type="text/css" media="all">
 <link rel="stylesheet" id="twentysixteen-style-css" href="{% static "css_custom/boots.css" %}" type="text/css">
+<link rel="stylesheet" href="{% static "highlights/github.css" %}" type="text/css">
 
 <link rel="stylesheet" id="sharedaddy-css" href="{% static "sharing.css" %}" type="text/css" media="all">
 <link rel="stylesheet" id="social-logos-css" href="{% static "social-logos.min.css" %}" type="text/css" media="all">
@@ -40,7 +32,7 @@
 
 
     <link rel="stylesheet" href="{% static "display/css/component.css" %}" type="text/css" >
-    <link rel="stylesheet" href="{% static "display/css/default.css" %}" type="text/css" >
+{#    <link rel="stylesheet" href="{% static "display/css/default.css" %}" type="text/css" >#}
 
     <script>
 			// this is important for IEs
@@ -59,6 +51,19 @@
 
 <body class="home blog hfeed infinite-scroll neverending">
 1
+
+
+<div class="md-modal md-effect-1" id="modal-101" style="width:25%">
+    <div class="md-content">
+				    <h3>晕猫</h3>
+        <div>
+            <img alt="晕猫" src="{% static 'wx.jpg' %}">
+        </div>
+					<div style="padding-bottom: 1em;background: rgba(0, 0, 0, 0.16);">
+                        <button class="md-close" style="background: rgba(0, 0, 0, 0.53)">Close me!</button></div>
+				</div>
+			</div>
+
 
 {% if request.user.is_authenticated %}
 
@@ -220,16 +225,15 @@
                     <p class="site-description">The website of Cityblack1</p>
 									</div><!-- .site-branding -->
 
-									<button id="menu-toggle" class="menu-toggle">Menu</button>
 
 					<div id="site-header-menu" class="site-header-menu">
 													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
 								<div class="menu-sections-container">
                                     <ul id="menu-sections" class="primary-menu">
-                                        <li id="menu-item-3829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="{% slugurl 'about' %}">About me</a></li>
-<li><a href="#">Producting...</a></li>
-<li><a href="#">Producting...</a></li>
-<li><a href="#">Producting...</a></li>
+                                        <li><a href="{% slugurl 'about' %}">关于我</a></li>
+<li><a href="#" class="md-trigger" data-modal="modal-101">晕猫</a></li>
+<li><a href="https://github.com/cityblack1" target="_black">Github</a></li>
+<li><a href="https://github.com/cityblack1" target="_black">我的作品</a></li>
 </ul></div>							</nav><!-- .main-navigation -->
 
 											</div><!-- .site-header-menu -->
@@ -257,20 +261,21 @@
 
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
-		<section id="meta-3" class="widget widget_meta"><h2 class="widget-title">Meta</h2>
+		<section id="meta-3" class="widget widget_meta">
+{#            <h2 class="widget-title">Meta</h2>#}
             {% if request.user.is_authenticated %}
-                <button class="md-trigger" data-modal="modal-15">LOG&nbsp; OUT</button>
+                <button class="md-trigger" data-modal="modal-15">登出</button>
 
                 {% else %}
-            <button class="md-trigger" data-modal="modal-1">LOG&nbsp; IN</button>
+            <button class="md-trigger" data-modal="modal-1">登录</button>
             &nbsp;&nbsp;&nbsp;
-            <button class="md-trigger" data-modal="modal-21">SIGN UP</button>
+            <button class="md-trigger" data-modal="modal-21">注册</button>
             {% endif %}
             <ul>
                 <br>
-                <li><a href="{{ request.site.root_url }}">Back to Home</a></li>
-			<li><a href="#">Leave me a message</a></li>
-			<li><a href="#">User center</a></li>
+                <li><a href="{{ request.site.root_url }}">回到首页</a></li>
+			<li><a href="#contact_me">给我留言</a></li>
+			<li><a href="#">用户中心</a></li>
 {#			<li><a href="#" title="崩坏3">BH3</a></li>#}
             </ul>
 			</section><section id="search-3" class="widget widget_search">
@@ -284,7 +289,7 @@
 </section>
 
         <section id="nav_menu-3" class="widget widget_nav_menu">
-            <h2 class="widget-title">CATEGORY</h2>
+            <h2 class="widget-title">分类</h2>
             <div class="menu-sections-container">
                 <ul id="menu-sections-1" class="menu">
                     {% for category in blog_index %}
@@ -294,7 +299,7 @@
         </section>
 
         <section id="top-posts-2" class="widget widget_top-posts">
-            <h2 class="widget-title">DATE &nbsp;RECORD</h2>
+            <h2 class="widget-title">归档</h2>
             <ul>
                 {% for date_category in date_categories %}
                 <li>
@@ -309,7 +314,7 @@
 			</ul>
         </section>
         <section id="linkcat-2" class="widget widget_links">
-            <h2 class="widget-title">TAGS</h2>
+            <h2 class="widget-title">标签</h2>
 	<ul class="xoxo blogroll">
         {% for tag in tags_list %}
 <li id="tag-block"><a href="{% url 'search' %}?t={{ tag }}#page_anchor">{{ tag }}</a></li>
@@ -319,19 +324,20 @@
     {% block similar %}
     {% endblock %}
 <!-- Start of Kindle This Widget -->
-<section id="contact_me" class="widget widget_kindle_this"><h2 class="widget-title">Contact Me</h2>		<div style="font-size:.9em;">
-        <form action="http://krondo.com/" method="GET" onsubmit="kpg_kindle_it(this);return false;">
+<section id="contact_me" class="widget widget_kindle_this"><h2 class="widget-title">联系我</h2>
+    <div style="font-size:.9em;">
+        <form action="{% url 'contact_me' %}" method="POST">
 				<span style="color:red;font-weight:bold" id="kpg_kc_1"></span>
-				<fieldset style="border:thin black solid;padding:2px;"><legend>Your name:</legend>
-				<input style="font-size:.9em;" size="32" name="kindle_email" type="text" placeholder="your-name"><br>(Enter the nickname you like)</fieldset>
-				<fieldset style="border:thin black solid;padding:2px;"><legend>Your E-mail:</legend>
-				<input style="font-size:.9em;" size="32" name="from_email" type="text" placeholder="good@email"><br>(Approved E-mail that I can touch you)
+				<fieldset style="border:thin black solid;padding:2px;"><legend>你的名字:</legend>
+				<input style="font-size:.9em;" size="32" id="4396name" type="text" name="name" placeholder="请输入你喜欢的称呼~"><br>(输入你喜欢的昵称吧)</fieldset>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>你的E-mail:</legend>
+				<input style="font-size:.9em;" size="32" id="4396id" name="email" type="text" placeholder="eg:123456@qq.com"><br>(请输入能联系到你的Email)
 				</fieldset>
-				<fieldset style="border:thin black solid;padding:2px;"><legend>Kindle base email</legend>
-                    <textarea name="contact-me" title="contact-me" placeholder="Enter you message here"></textarea>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>你的留言</legend>
+                    <textarea id="4396m" name="message" title="contact-me" placeholder="在这里输入你的留言, 我收到后会尽快联系你"></textarea>
                     <br>(example:cityblack1 is a handsome guy!)
 				</fieldset>
-				<input type="submit" name="kpg_ksub" value="send to Cityblack1">
+				<input type="submit" id="submit4396" name="kpg_ksub" value="发送给Cityblack1">
 		</form>
 </div>
 
@@ -342,28 +348,27 @@
 
 		</div><!-- .site-content -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-							<nav class="main-navigation" role="navigation" aria-label="Footer Primary Menu">
-					<div class="menu-sections-container">
-                        <ul id="menu-sections-2" class="primary-menu">
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="{% slugurl 'about' %}">About me</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3713"><a href="#">Twisted Introduction</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3711"><a href="#">Programmer’s Editors</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3712"><a href="#">Software</a></li>
-</ul></div>				</nav><!-- .main-navigation -->
-
-
-			<div class="site-info">
-								<span class="site-title"><a href="{{ request.site.root_url }}" rel="home">褐色城市</a></span>
-				by Cityblack1
-			</div><!-- .site-info -->
-		</footer><!-- .site-footer -->
+{#		<footer id="colophon" class="site-footer" role="contentinfo">#}
+{#							<nav class="main-navigation" role="navigation" aria-label="Footer Primary Menu">#}
+{#					<div class="menu-sections-container">#}
+{#                        <ul id="menu-sections-2" class="primary-menu">#}
+{#                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3829"><a href="{% slugurl 'about' %}">About me</a></li>#}
+{#<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3713"><a href="#">Twisted Introduction</a></li>#}
+{#<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3711"><a href="#">Programmer’s Editors</a></li>#}
+{#<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3712"><a href="#">Software</a></li>#}
+{#</ul></div>				</nav><!-- .main-navigation -->#}
+{##}
+{##}
+{#			<div class="site-info">#}
+{#								<span class="site-title"><a href="{{ request.site.root_url }}" rel="home">褐色城市</a></span>#}
+{#				by Cityblack1#}
+{#			</div><!-- .site-info -->#}
+{#		</footer><!-- .site-footer -->#}
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
 {#<script type="text/javascript" src="{% static 'infinity.js' %}"></script>#}
 <script type="text/javascript" src="{% static 'photon.js' %}"></script>
-<script type="text/javascript" src="{% static 'devicepx-jetpack.js' %}"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 {#var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"http:\/\/krondo.com\/wp-admin\/admin-ajax.php","nonce":"f7da50cca3","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"http:\/\/krondo.com\/wp-login.php?redirect_to=http%3A%2F%2Fkrondo.com%2Freview-the-undoing-project-a-friendship-that-changed-our-minds%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};#}
@@ -388,7 +393,7 @@ var jetpackCarouselStrings = {
 
 /* ]]> */
 </script>
-<script type="text/javascript" src="{% static 'jetpack-carousel.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'jetpack-carousel.js' %}"></script>#}
 <script type="text/javascript">
 /* <![CDATA[ */
 var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Download File":"Download File","Download Video":"Download Video","Play":"Play","Pause":"Pause","Captions\/Subtitles":"Captions\/Subtitles","None":"None","Time Slider":"Time Slider","Skip back %1 seconds":"Skip back %1 seconds","Video Player":"Video Player","Audio Player":"Audio Player","Volume Slider":"Volume Slider","Mute Toggle":"Mute Toggle","Unmute":"Unmute","Mute":"Mute","Use Up\/Down Arrow keys to increase or decrease volume.":"Use Up\/Down Arrow keys to increase or decrease volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds."}};
@@ -406,9 +411,9 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
 		<div style="display:none">
 	</div>
 <script type='text/javascript'>
-/* <![CDATA[ */
-var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/jetpack.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/jetpack.wordpress.com\/wp-login.php?action=logout&_wpnonce=11242c8adc","homeURL":"https:\/\/luminouscreaturespress.com\/","postID":"14","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"1","text_direction":"ltr"};
-/* ]]> */
+{#/* <![CDATA[ */#}
+{#var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/jetpack.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/jetpack.wordpress.com\/wp-login.php?action=logout&_wpnonce=11242c8adc","homeURL":"https:\/\/luminouscreaturespress.com\/","postID":"14","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"1","text_direction":"ltr"};#}
+{#/* ]]> */#}
 </script>
 <script type='text/javascript' src='{% static 'comments/script.js' %}'></script>
 			<script type='text/javascript' src='{% static 'comments/reblog.js' %}'></script>

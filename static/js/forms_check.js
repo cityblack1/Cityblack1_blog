@@ -1,6 +1,24 @@
 $(function() {
 	/*placeholder 效果*/
+
+
 	(function() {
+		$('#submit4396').click(function () {
+			$('#4396name').focus(function () {
+				$('#submit4396').attr('disabled', false);
+            });
+			$('#4396id').focus(function () {
+				$('#submit4396').attr('disabled', false);
+            });
+			$('#4396m').focus(function () {
+				$('#submit4396').attr('disabled', false);
+            });
+		if (!$('#4396name').val()){alert('请输入名字');$('#submit4396').attr('disabled', true);return}
+		else if (!$('#4396id').val()){alert('请输入Email');$('#submit4396').attr('disabled', true);return}
+		else if (!$('#4396m').val()){alert('请输入信息');$('#submit4396').attr('disabled', true);return}
+		alert('提交成功, 管理员会尽快回复的')
+    });
+
 		$('.input-xlarge').focus(function () {
 			this.placeText = $(this).attr('placeholder');
 			$(this).removeAttr('placeholder')

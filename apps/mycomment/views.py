@@ -1,7 +1,10 @@
 from blog.models import BlogPage
 from django.contrib import messages
-
 from .forms import MyCommentForm, ContactForm
+from .models import Contact
+from .serializer import ContactSerializer
+
+from rest_framework import generics
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
@@ -9,7 +12,6 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_protect
 from django_comments.models import CommentFlag
-
 
 from django_comments.views.utils import next_redirect
 
@@ -19,6 +21,22 @@ from django_comments_xtd.models import (LIKEDIT_FLAG, DISLIKEDIT_FLAG)
 from django_comments_xtd.utils import send_mail, has_app_model_option
 
 # Create your views here.
+
+
+class ContactList(generics.ListCreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return redirect('home.HomePage')
+
+
+class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
 
 
 def comment_view(request, slug):
