@@ -2,7 +2,7 @@ beautifulsoup4==4.6.0
 certifi==2017.7.27.1
 chardet==3.0.4
 dj-pagination==2.3.0
-Django==1.10
+Django==1.11.28
 django-comments-xtd==2.0.6
 django-contrib-comments==1.8.0
 django-modelcluster==3.1
